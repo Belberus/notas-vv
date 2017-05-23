@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Notas</string>
+    <string name="categorias">Categorías</string>
+    <string name="no_notes">No hay notas </string>
+    <string name="no_categories">No hay categorias </string>
+    <string name="action_settings">Ajustes</string>
+    <string name="menu_insert">Añadir nota</string>
+    <string name="menu_send">Enviar nota</string>
+    <string name="menu_list">Ver notas</string>
+    <string name="menu_listC">Ver categorías</string>
+    <string name="menu_orderByTitle">Ordenar por título</string>
+    <string name="menu_orderByC">Ordenar por categoría</string>
+    <string name="menu_delete">Eliminar nota</string>
+    <string name="menu_deleteC">Eliminar categoria</string>
+    <string name="menu_edit">Editar nota</string>
+    <string name="menu_insertC">Añadir categoria</string>
+    <string name="menu_editC">Editar categoría</string>
+    <string name="id">ID</string>
+    <string name="title">Titulo</string>
+    <string name="body">Contenido</string>
+    <string name="confirm">Guardar</string>
+    <string name="edit_note">Editar nota</string>
+    <string name="title_activity_note_edit">Editor de nota</string>
+    <string name="test_cn">Test caja negra</string>
+    <string name="test_v">Test volumen</string>
+    <string name="test_s">Test sobrecarga</string>
+    <string name="reset">Reset</string>
+
+    <string-array name="categorias"/>
+</resources>
