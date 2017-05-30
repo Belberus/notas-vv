@@ -1,9 +1,12 @@
 // Alberto Martinez, Dario Sanchez, Adrian Martinez
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
+
 import org.junit.Test;
 import es.unizar.eina.notepadv3.Notepadv3;
 import es.unizar.eina.notepadv3.NotesDbAdapter;
+
 
 public class Notepadv3Test extends ActivityInstrumentationTestCase2<Notepadv3> {
 
@@ -20,13 +23,16 @@ public class Notepadv3Test extends ActivityInstrumentationTestCase2<Notepadv3> {
         super.setUp();
         mNotepad = getActivity();
         mDbHelper = mNotepad.getNotesDbAdapter();
+        // Cramos una nota para saber desde que ID tenemos que borrar al final
+        originalRows = mDbHelper.createNote("Titulo","Contenido",1);
+
     }
 
     @Test
     public void testNumberOfNotes() {
         int nNotasPre = mDbHelper.getNumberOfNotes();
 
-        originalRows = mDbHelper.createNote("Titulo","Contenido",1);
+        mDbHelper.createNote("Titulo","Contenido",1);
 
         int nNotasPost = mDbHelper.getNumberOfNotes();
 
@@ -127,6 +133,20 @@ public class Notepadv3Test extends ActivityInstrumentationTestCase2<Notepadv3> {
     public void testModificarNotaIdCero() {
         boolean resultado = mDbHelper.updateNote(0,"tituloNew","cuerpoNew",0);
         assertFalse(resultado);
+    }
+
+    // EXTRA TESTS
+    @Test
+    public void testCrearNotaConTituloNumerico() {
+        long resultado = mDbHelper.createNote("12345", "cuerpo", 0);
+        assertTrue(resultado >= 0);
+    }
+
+    @Test
+    public void testModificarNotaConTituloNumerico() {
+        long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
+        boolean resultado = mDbHelper.updateNote(newNoteId,"12345","",0);
+        assertTrue(resultado);
     }
 
     @Override
