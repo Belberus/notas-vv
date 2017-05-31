@@ -152,6 +152,22 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
         assertTrue(idNota == -1);
     }
 
+    @Test
+    public void testModificarCategoriaDeNotaAExistente() {
+        long idCat = mDbHelper.createCategory("Categoria");
+        long idNota = mDbHelper.createNote("Titulo","Ciuerpo",0);
+        boolean updated = mDbHelper.updateNote(idNota,"Titulo","Cuerpo", (int)idCat);
+        assertTrue(updated);
+    }
+
+    @Test
+    public void testModificarCategoriaDeNotaAInexistente() {
+        long idCat = mDbHelper.createCategory("Categoria");
+        long idNota = mDbHelper.createNote("Titulo","Ciuerpo",(int)idCat);
+        boolean updated = mDbHelper.updateNote(idNota,"Titulo","Cuerpo", -1);
+        assertFalse(updated);
+    }
+
 
     @Override
     protected void tearDown() throws Exception{

@@ -5,6 +5,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Random;
+
 import es.unizar.eina.notepadv3.Notepadv3;
 import es.unizar.eina.notepadv3.NotesDbAdapter;
 
@@ -30,8 +32,10 @@ public class Notepadv3SobrecargaTest extends ActivityInstrumentationTestCase2<No
     @Test
     public void testSobrecarga() {
         int notasCreadas = 0;
+
         while(true) {
-            mDbHelper.createNote("Nota_" + notasCreadas, "cuerpo", 0);
+            int length = notasCreadas*100;
+            mDbHelper.createNote("Nota_" + notasCreadas, random(length), 0);
             Log.d("TEST SOBRECARGA", " CREADA Nota_" + notasCreadas + " creada.");
             notasCreadas++;
         }
@@ -43,5 +47,22 @@ public class Notepadv3SobrecargaTest extends ActivityInstrumentationTestCase2<No
             mNotepad.getNotesDbAdapter().deleteNote(i);
         }
         super.tearDown();
+    }
+
+    /**
+     * Create a random string of length indicated by the parameter
+     * @param length int that represent the max length of the string return
+     * @return string of length indicated
+     */
+    private static String random(int length) {
+        Random generator = new Random();
+        StringBuilder randomStringBuilder = new StringBuilder();
+        int randomLength = generator.nextInt(length);
+        char tempChar;
+        for (int i = 0; i < randomLength; i++){
+            tempChar = (char) (generator.nextInt(96) + 32);
+            randomStringBuilder.append(tempChar);
+        }
+        return randomStringBuilder.toString();
     }
 }
