@@ -161,6 +161,13 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
     }
 
     @Test
+    public void testModificarCategoriaDeNotaACero() {
+        long idCat = mDbHelper.createCategory("Categoria");
+        long idNota = mDbHelper.createNote("Titulo","Ciuerpo",(int)idCat);
+        boolean updated = mDbHelper.updateNote(idNota,"Titulo","Cuerpo", 0);
+        assertTrue(updated);
+    }
+    @Test
     public void testModificarCategoriaDeNotaAInexistente() {
         long idCat = mDbHelper.createCategory("Categoria");
         long idNota = mDbHelper.createNote("Titulo","Ciuerpo",(int)idCat);
@@ -176,5 +183,4 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
         }
         super.tearDown();
     }
-
 }
