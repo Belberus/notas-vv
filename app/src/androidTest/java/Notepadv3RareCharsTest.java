@@ -3,6 +3,9 @@ import android.util.Log;
 
 import es.unizar.eina.notepadv3.Notepadv3;
 import es.unizar.eina.notepadv3.NotesDbAdapter;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 // En estos test, observaremos el comportamiento de la aplicacion ante caracteres no imprimibles [0..32 ASCII]
@@ -11,11 +14,12 @@ public class Notepadv3RareCharsTest extends ActivityInstrumentationTestCase2<Not
     private NotesDbAdapter mDbHelper;
     private long originalRows;
 
+    private static final String TAG = "TestRareChars";
     public Notepadv3RareCharsTest(){
         super(Notepadv3.class);
     }
 
-    @Override
+    @Before
     protected void setUp() throws Exception {
         super.setUp();
         mNotepad = getActivity();
@@ -24,22 +28,19 @@ public class Notepadv3RareCharsTest extends ActivityInstrumentationTestCase2<Not
         originalRows = mDbHelper.createNote("Titulo","Contenido",1);
     }
 
-
     @Test
-    public void TestCaracteresRaros() {
+    public void testCaracteresRaros() {
         int asciiInicial = 0;
         for (int i= asciiInicial; i<=32; i++) {
-            System.out.println("Prueba caracter ASCII: " + asciiInicial);
+           Log.d(TAG,"Prueba caracter ASCII: " + i);
             long result = mDbHelper.createNote(Character.toString((char) i), "Contenido",1);
             if (result == -1) {
-                System.out.println("Nota no creada.");
-            } else System.out.println("Nota creada.");
+                Log.d(TAG,"Nota no creada.");
+            } else Log.d(TAG,"Nota creada.");
         }
-
-        assertEquals(asciiInicial,0);
     }
 
-    @Override
+    @After
     protected void tearDown() throws Exception{
         for (long i = originalRows; i < mDbHelper.getNumberOfNotes(); i++) {
             mNotepad.getNotesDbAdapter().deleteNote(i);

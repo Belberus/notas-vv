@@ -32,8 +32,6 @@ public class CategoryList extends AppCompatActivity implements AdapterView.OnIte
     private Cursor mCategoriesCursor;
     private ListView mList;
 
-
-
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,9 +62,7 @@ public class CategoryList extends AppCompatActivity implements AdapterView.OnIte
      */
     private void fillData() {
         // Get all of the notes from the database and create the item list
-
         mCategoriesCursor = mDbHelper.fetchAllCategories(false);
-
 
         if(mCategoriesCursor.getCount() > 0){
             mList.setVisibility(View.VISIBLE);

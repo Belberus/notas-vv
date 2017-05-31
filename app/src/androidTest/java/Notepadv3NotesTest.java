@@ -3,18 +3,20 @@
 import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import es.unizar.eina.notepadv3.Notepadv3;
 import es.unizar.eina.notepadv3.NotesDbAdapter;
 
 
-public class Notepadv3Test extends ActivityInstrumentationTestCase2<Notepadv3> {
+public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepadv3> {
 
     private Notepadv3 mNotepad;
     private NotesDbAdapter mDbHelper;
     private long originalRows;
 
-    public Notepadv3Test(){
+    public Notepadv3NotesTest(){
         super(Notepadv3.class);
     }
 
@@ -95,7 +97,7 @@ public class Notepadv3Test extends ActivityInstrumentationTestCase2<Notepadv3> {
         assertTrue(resultado);
     }
 
-    @Test 
+    @Test
     public void testModificarNotaConTituloNull() {
         long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
         boolean resultado = mDbHelper.updateNote(newNoteId,null,"cuerpoNew",0);
@@ -136,18 +138,20 @@ public class Notepadv3Test extends ActivityInstrumentationTestCase2<Notepadv3> {
     }
 
     // EXTRA TESTS
+
     @Test
-    public void testCrearNotaConTituloNumerico() {
-        long resultado = mDbHelper.createNote("12345", "cuerpo", 0);
-        assertTrue(resultado >= 0);
+    public void testCrearNotaCategoriaExistente() {
+        long idCat = mDbHelper.createCategory("Categoria");
+        long idNota = mDbHelper.createNote("Titulo","Cuerpo",(int)idCat);
+        assertTrue(idNota != -1);
     }
 
     @Test
-    public void testModificarNotaConTituloNumerico() {
-        long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
-        boolean resultado = mDbHelper.updateNote(newNoteId,"12345","",0);
-        assertTrue(resultado);
+    public void testCrearNotaCategoriaInexistente() {
+        long idNota = mDbHelper.createNote("Titulo","Cuerpo",-1);
+        assertTrue(idNota == -1);
     }
+
 
     @Override
     protected void tearDown() throws Exception{

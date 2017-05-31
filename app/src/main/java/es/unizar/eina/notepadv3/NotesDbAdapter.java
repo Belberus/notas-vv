@@ -121,7 +121,11 @@ public class NotesDbAdapter {
         initialValues.put(KEY_BODY, body);
         initialValues.put(KEY_CAT, category);
 
-        return mDb.insert(DATABASE_TABLE, null, initialValues);
+        if (category > -1) {
+            return mDb.insert(DATABASE_TABLE, null, initialValues);
+        } else return -1;
+
+
     }
 
     /**
@@ -215,6 +219,7 @@ public class NotesDbAdapter {
         }
     }
 
+
     /**
      * Return a Cursor positioned at the note that matches the given rowId
      *
@@ -250,7 +255,7 @@ public class NotesDbAdapter {
         args.put(KEY_BODY, body);
         args.put(KEY_CAT, category);
 
-        if (title == null || body == null) {
+        if (title == null || body == null || category < 0) {
             return false;
         } else {
             return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null)
@@ -285,11 +290,15 @@ public class NotesDbAdapter {
      * @return true if the note was successfully updated, false otherwise
      */
     public boolean updateCategory(long rowId, String title) {
-        ContentValues args = new ContentValues();
-        args.put(KEY_CAT, title);
+        if (title == null) {
+            return false;
+        } else {
+            ContentValues args = new ContentValues();
+            args.put(KEY_CAT, title);
 
-        return mDb.update(DATABASE_TABLECAT, args, KEY_ROWID + "=" + rowId, null)
-                > 0;
+            return mDb.update(DATABASE_TABLECAT, args, KEY_ROWID + "=" + rowId, null)
+                    > 0;
+        }
     }
 
     /**
@@ -349,11 +358,19 @@ public class NotesDbAdapter {
         return cursor.getCount();
     }
 
+    /* Devuelve el numero de categorias guardadas */
+    public int getNumberOfCategories() {
+        Cursor cursor = fetchAllCategories(true);
+        return cursor.getCount();
+    }
+
     /**
      * Remove all from database.
      */
     public void removeAll(){
         mDb.delete(DATABASE_TABLE, null, null); //Borro notas
+        mDb.delete(DATABASE_TABLECAT, null, null); //Borro categorias
         mDb.execSQL("delete from sqlite_sequence where name='"+DATABASE_TABLE+"'");
+        mDb.execSQL("delete from sqlite_sequence where name='"+DATABASE_TABLECAT+"'");
     }
 }
