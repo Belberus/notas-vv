@@ -255,7 +255,7 @@ public class NotesDbAdapter {
         args.put(KEY_BODY, body);
         args.put(KEY_CAT, category);
 
-        if (title == null || body == null || category < 0) {
+        if (title == null || body == null) {
             return false;
         } else {
             return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null)

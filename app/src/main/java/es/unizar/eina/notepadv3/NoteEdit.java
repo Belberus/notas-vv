@@ -8,6 +8,7 @@ package es.unizar.eina.notepadv3;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -46,13 +47,15 @@ public class NoteEdit extends AppCompatActivity {
         mCategoryText = (Spinner) findViewById(R.id.spinner);
 
         Cursor cursorCat = mDbHelper.fetchAllCategories(true);
-        arraySpinner = new String[cursorCat.getCount()];
+        arraySpinner = new String[cursorCat.getCount() +1];
         if (arraySpinner.length != 0) {
             cursorCat.moveToFirst();
         }
 
-        for (int i = 0; i < arraySpinner.length; i++) {
+        arraySpinner[0] = "Sin categoria";
+        for (int i = 1; i < arraySpinner.length; i++) {
             String catName = cursorCat.getString(cursorCat.getColumnIndex(NotesDbAdapter.KEY_CAT));
+            Log.d("Category",catName);
             cursorCat.moveToNext();
             arraySpinner[i] = catName;
         }
@@ -129,8 +132,12 @@ public class NoteEdit extends AppCompatActivity {
         String body = mBodyText.getText().toString();
         int idCat = 0;
         if (mCategoryText.getSelectedItem() != null) {
-            String category = mCategoryText.getSelectedItem().toString();
-            idCat = mDbHelper.getIdCat(category);
+            if (mCategoryText.getSelectedItem().toString().equals("Sin categoria")) {
+                idCat = 0;
+            } else {
+                String category = mCategoryText.getSelectedItem().toString();
+                idCat = mDbHelper.getIdCat(category);
+            }
         }
 
         if (title.equals("") || title == null) {
