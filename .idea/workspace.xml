@@ -7,31 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9f1823-b15a-49ba-bc31-71f3d01fd015" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/Test.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3AceptTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3AceptTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3CategoryTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3CategoryTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3NotesTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3NotesTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3RareCharsTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3RareCharsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3SobrecargaTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3SobrecargaTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3VolumeTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/Notepadv3VolumeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/CategoryEdit.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/CategoryEdit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/CategoryList.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/CategoryList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/NoteEdit.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/NoteEdit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/Notepadv3.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/Notepadv3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/NotesDbAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/notepadv3/NotesDbAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/send/SendAbstraction.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/send/SendAbstraction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/send/SendAbstractionImpl.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/send/SendAbstractionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/send/SendImplementor.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/unizar/eina/send/SendImplementor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="notas-vv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2476,7 +2452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496654242730</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Completados test de aceptacion">
+      <created>1496656542919</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1496656542919</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2565,7 +2548,8 @@
     <MESSAGE value="Añadidos tests de navegación" />
     <MESSAGE value="Añadidos tests extra para notas y categorias" />
     <MESSAGE value="Añadidos tests de aceptación, corrección del requisito eliminar categoria asignada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadidos tests de aceptación, corrección del requisito eliminar categoria asignada" />
+    <MESSAGE value="Completados test de aceptacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completados test de aceptacion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
