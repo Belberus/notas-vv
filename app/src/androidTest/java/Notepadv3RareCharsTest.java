@@ -6,7 +6,6 @@ import es.unizar.eina.notepadv3.NotesDbAdapter;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 // En estos test, observaremos el comportamiento de la aplicacion ante caracteres no imprimibles [0..32 ASCII]
 public class Notepadv3RareCharsTest extends ActivityInstrumentationTestCase2<Notepadv3> {
@@ -28,7 +27,6 @@ public class Notepadv3RareCharsTest extends ActivityInstrumentationTestCase2<Not
         originalRows = mDbHelper.createNote("Titulo","Contenido",1);
     }
 
-    @Test
     public void testCaracteresRaros() {
         int asciiInicial = 0;
         for (int i= asciiInicial; i<=32; i++) {

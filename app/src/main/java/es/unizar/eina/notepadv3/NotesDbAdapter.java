@@ -9,7 +9,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -93,10 +92,9 @@ public class NotesDbAdapter {
      *         initialization call)
      * @throws SQLException if the database could be neither opened or created
      */
-    public NotesDbAdapter open() throws SQLException {
+    public void open() throws SQLException {
         mDbHelper = new DatabaseHelper(mCtx);
         mDb = mDbHelper.getWritableDatabase();
-        return this;
     }
 
     public void close() {
@@ -113,7 +111,6 @@ public class NotesDbAdapter {
      * @param body the body of the note
      * @param category the category of the note
      * @return rowId or -1 if failed
-     * @throws Throwable if can not insert note
      */
     public long createNote(String title, String body, int category) {
         ContentValues initialValues = new ContentValues();
@@ -255,12 +252,7 @@ public class NotesDbAdapter {
         args.put(KEY_BODY, body);
         args.put(KEY_CAT, category);
 
-        if (title == null || body == null) {
-            return false;
-        } else {
-            return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null)
-                    > 0;
-        }
+        return !(title == null || body == null || category < 0) && mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
     }
 
     /**
@@ -307,7 +299,7 @@ public class NotesDbAdapter {
      * @return the id asked
      */
     public int getMaxId(boolean notes) {
-        Cursor c = null;
+        Cursor c;
         if (notes) {
             c = mDb.rawQuery("SELECT MAX(_id) FROM "+DATABASE_TABLE, null);
         }else{
@@ -341,7 +333,7 @@ public class NotesDbAdapter {
      * @param idCat int that represents the category id
      * @return string, the name of the category
      */
-    public String getCat(int idCat) throws Exception {
+    public String getCat(int idCat) {
         Cursor c = mDb.rawQuery("SELECT "+KEY_CAT+" FROM " + DATABASE_TABLECAT + " WHERE "
                 + KEY_ROWID + " = '" + idCat +"'", null);
         if (c == null || c.getColumnCount() <= 0) {

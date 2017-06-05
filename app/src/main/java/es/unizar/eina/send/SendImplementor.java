@@ -7,19 +7,19 @@ import android.app.Activity;
  * La interfaz no se tiene que corresponder directamente con la interfaz de
  * la abstraccion.
  */
-public interface SendImplementor {
+interface SendImplementor {
 
     /**  Actualiza la actividad desde la cual se abrira la actividad de envio
      *  de notas
      */
-    public void setSourceActivity(Activity source);
+    void setSourceActivity(Activity source);
 
     /**  Recupera la actividad desde la cual se abrira la actividad de envio
      * de notas
      */
-    public Activity getSourceActivity();
+    Activity getSourceActivity();
 
     /** Permite lanzar la actividad encargada de gestionar el envio de notas */
-    public void send (String subject, String body);
+    void send(String subject, String body);
 
 }

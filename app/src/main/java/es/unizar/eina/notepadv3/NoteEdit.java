@@ -17,14 +17,11 @@ import android.widget.Spinner;
 
 public class NoteEdit extends AppCompatActivity {
 
-    private EditText mIDText;
     private EditText mTitleText;
     private EditText mBodyText;
     private Spinner mCategoryText;
     private Long mRowId;
     private NotesDbAdapter mDbHelper;
-
-    private String[] arraySpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,7 @@ public class NoteEdit extends AppCompatActivity {
         mCategoryText = (Spinner) findViewById(R.id.spinner);
 
         Cursor cursorCat = mDbHelper.fetchAllCategories(true);
-        arraySpinner = new String[cursorCat.getCount() +1];
+        String[] arraySpinner = new String[cursorCat.getCount() + 1];
         if (arraySpinner.length != 0) {
             cursorCat.moveToFirst();
         }
@@ -60,11 +57,11 @@ public class NoteEdit extends AppCompatActivity {
             arraySpinner[i] = catName;
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
         mCategoryText.setAdapter(adapter);
 
-        mIDText = (EditText) findViewById(R.id.title_template);
+        EditText mIDText = (EditText) findViewById(R.id.title_template);
 
         Button confirmButton = (Button) findViewById(R.id.confirm);
 
@@ -104,7 +101,9 @@ public class NoteEdit extends AppCompatActivity {
             try{
             mCategoryText.setSelection(((ArrayAdapter) mCategoryText.getAdapter()).getPosition(
                         mDbHelper.getCat(note.getInt(note.getColumnIndexOrThrow(NotesDbAdapter.KEY_CAT)))));
-            } catch (Exception e){}
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -140,7 +139,7 @@ public class NoteEdit extends AppCompatActivity {
             }
         }
 
-        if (title.equals("") || title == null) {
+        if (title.equals("")) {
             if (mRowId != null)
                 title = "Nueva_nota_" + mRowId;
             else
@@ -154,8 +153,9 @@ public class NoteEdit extends AppCompatActivity {
                     mRowId = id;
                 }
             } catch (Throwable ex) {
+                ex.printStackTrace();
             }
-            ;
+
         } else {
             try {
                 mDbHelper.updateNote(mRowId, title, body, idCat);

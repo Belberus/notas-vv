@@ -1,11 +1,7 @@
 // Alberto Martinez, Dario Sanchez, Adrian Martinez
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.util.Log;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import es.unizar.eina.notepadv3.Notepadv3;
 import es.unizar.eina.notepadv3.NotesDbAdapter;
 
@@ -30,7 +26,6 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
 
     }
 
-    @Test
     public void testNumberOfNotes() {
         int nNotasPre = mDbHelper.getNumberOfNotes();
 
@@ -41,97 +36,82 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
         assertEquals(nNotasPre + 1, nNotasPost);
     }
 
-    @Test
     public void testCrearNotaCorrecta(){
         long resultado = mDbHelper.createNote("titulo", "cuerpo", 0);
         assertTrue(resultado >= 0);
     }
 
-    @Test
     public void testCrearNotaTituloNull() {
         long resultado = mDbHelper.createNote(null, "cuerpo", 0);
         assertEquals(resultado, -1);
     }
 
-    @Test
     public void testCrearNotaSinTitulo(){
         long resultado = mDbHelper.createNote("", "cuerpo", 0);
         assertTrue(resultado >= 0);
     }
 
-    @Test
     public void testCrearNotaCuerpoNull() {
         long resultado = mDbHelper.createNote("titulo", null, 0);
         assertEquals(resultado,-1);
     }
 
-    @Test
     public void testCrearNotaSinCuerpo(){
         long resultado = mDbHelper.createNote("titulo", "", 0);
         assertTrue(resultado >= 0);
     }
 
-    @Test
     public void testBorrarNotaCorrecta() {
         long newNoteId = mDbHelper.createNote("titulo", "cuerpo", 0);
         boolean resultado = mDbHelper.deleteNote(newNoteId);
         assertTrue(resultado);
     }
 
-    @Test
     public void testBorrarNotaIdNegativo() {
         boolean resultado = mDbHelper.deleteNote(-1);
         assertFalse(resultado);
     }
 
-    @Test
     public void testBorrarNotaIdCero() {
         boolean resultado = mDbHelper.deleteNote(0);
         assertFalse(resultado);
     }
 
-    @Test
     public void testModificarNotaCorrecta() {
         long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
         boolean resultado = mDbHelper.updateNote(newNoteId,"tituloNew","cuerpoNew",0);
         assertTrue(resultado);
     }
 
-    @Test
     public void testModificarNotaConTituloNull() {
         long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
         boolean resultado = mDbHelper.updateNote(newNoteId,null,"cuerpoNew",0);
         assertFalse(resultado);
     }
 
-    @Test
     public void testModificarNotaTituloVacio() {
         long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
         boolean resultado = mDbHelper.updateNote(newNoteId,"","cuerpoNew",0);
         assertTrue(resultado);
     }
 
-    @Test
     public void testModificarNotaConCuerpoNull() {
         long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
         boolean resultado = mDbHelper.updateNote(newNoteId,"tituloNew",null,0);
         assertFalse(resultado);
     }
 
-    @Test
     public void testModificarNotaCuerpoVacio() {
         long newNoteId = mDbHelper.createNote("titulo","cuerpo",0);
         boolean resultado = mDbHelper.updateNote(newNoteId,"tituloNew","",0);
         assertTrue(resultado);
     }
 
-    @Test
     public void testModificarNotaIdNegativo() {
         boolean resultado = mDbHelper.updateNote(-1,"tituloNew","cuerpoNew",0);
         assertFalse(resultado);
     }
 
-    @Test
     public void testModificarNotaIdCero() {
         boolean resultado = mDbHelper.updateNote(0,"tituloNew","cuerpoNew",0);
         assertFalse(resultado);
@@ -139,20 +119,17 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
 
     // EXTRA TESTS
 
-    @Test
     public void testCrearNotaCategoriaExistente() {
         long idCat = mDbHelper.createCategory("Categoria");
         long idNota = mDbHelper.createNote("Titulo","Cuerpo",(int)idCat);
         assertTrue(idNota != -1);
     }
 
-    @Test
     public void testCrearNotaCategoriaInexistente() {
         long idNota = mDbHelper.createNote("Titulo","Cuerpo",-1);
         assertTrue(idNota == -1);
     }
 
-    @Test
     public void testModificarCategoriaDeNotaAExistente() {
         long idCat = mDbHelper.createCategory("Categoria");
         long idNota = mDbHelper.createNote("Titulo","Ciuerpo",0);
@@ -160,14 +137,12 @@ public class Notepadv3NotesTest extends ActivityInstrumentationTestCase2<Notepad
         assertTrue(updated);
     }
 
-    @Test
     public void testModificarCategoriaDeNotaACero() {
         long idCat = mDbHelper.createCategory("Categoria");
         long idNota = mDbHelper.createNote("Titulo","Ciuerpo",(int)idCat);
         boolean updated = mDbHelper.updateNote(idNota,"Titulo","Cuerpo", 0);
         assertTrue(updated);
     }
-    @Test
     public void testModificarCategoriaDeNotaAInexistente() {
         long idCat = mDbHelper.createCategory("Categoria");
         long idNota = mDbHelper.createNote("Titulo","Ciuerpo",(int)idCat);

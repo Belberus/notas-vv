@@ -3,7 +3,6 @@ import android.util.Log;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import java.util.Random;
 
@@ -29,7 +28,6 @@ public class Notepadv3SobrecargaTest extends ActivityInstrumentationTestCase2<No
 
     }
 
-    @Test
     public void testSobrecarga() {
         int notasCreadas = 0;
 

@@ -1,7 +1,5 @@
 import android.support.test.rule.ActivityTestRule;
-import android.test.ActivityInstrumentationTestCase2;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import es.unizar.eina.notepadv3.Notepadv3;
@@ -63,40 +61,6 @@ public class Notepadv3AceptTest {
     }
 
     @Test
-    public void testAsignarCategoria() {
-        sleep();
-        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
-        sleep();
-        onView(withText("Añadir nota")).perform(click());
-        sleep();
-        onView(withId(R.id.title)).perform(replaceText("Mi titulo para la nota"));
-        sleep();
-        onView(withId(R.id.spinner)).perform(click());
-        sleep();
-        onView(withText("Categoria1")).perform(click());
-        sleep();
-        onView(withId(R.id.body)).perform(replaceText("Mi cuerpo para la nota"));
-        sleep();
-        onView(withId(R.id.confirm)).perform(click());
-        sleep();
-    }
-
-    @Test
-    public void testModificarCategoriaAsignada() {
-        sleep();
-        onData(anything()).inAdapterView(withId(R.id.list)).atPosition(0).perform(longClick());
-        sleep();
-        onView(withText("Editar nota")).perform(click());
-        sleep();
-        onView(withId(R.id.spinner)).perform(click());
-        sleep();
-        onView(withText("Categoria2")).perform(click());
-        sleep();
-        onView(withId(R.id.confirm)).perform(click());
-        sleep();
-    }
-
-    @Test
     public void testCrearCategoria() {
         sleep();
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
@@ -120,7 +84,7 @@ public class Notepadv3AceptTest {
         sleep();
         onView(withText("Ver categorías")).perform(click());
         sleep();
-        onData(anything()).inAdapterView(withId(R.id.list)).atPosition(0).perform(longClick());
+        onView(withText("MiCategoria")).perform(longClick());
         sleep();
         onView(withText("Editar categoría")).perform(click());
         sleep();
@@ -137,11 +101,47 @@ public class Notepadv3AceptTest {
         sleep();
         onView(withText("Ver categorías")).perform(click());
         sleep();
-        onData(anything()).inAdapterView(withId(R.id.list)).atPosition(0).perform(longClick());
+        onView(withText("MiCategoriaEditada")).perform(longClick());
         sleep();
         onView(withText("Eliminar categoria")).perform(click());
         sleep();
     }
+
+    @Test
+    public void testAsignarCategoria() {
+        sleep();
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
+        sleep();
+        onView(withText("Añadir nota")).perform(click());
+        sleep();
+        onView(withId(R.id.title)).perform(replaceText("Mi titulo para la nota"));
+        sleep();
+        onView(withId(R.id.spinner)).perform(click());
+        sleep();
+        onView(withText("CategoriaBasica1")).perform(click());
+        sleep();
+        onView(withId(R.id.body)).perform(replaceText("Mi cuerpo para la nota"));
+        sleep();
+        onView(withId(R.id.confirm)).perform(click());
+        sleep();
+    }
+
+    @Test
+    public void testModificarCategoriaAsignada() {
+        sleep();
+        onData(anything()).inAdapterView(withId(R.id.list)).atPosition(0).perform(longClick());
+        sleep();
+        onView(withText("Editar nota")).perform(click());
+        sleep();
+        onView(withId(R.id.spinner)).perform(click());
+        sleep();
+        onView(withText("CategoriaBasica2")).perform(click());
+        sleep();
+        onView(withId(R.id.confirm)).perform(click());
+        sleep();
+    }
+
+
 
     @Test
     public void testEliminarCategoriaAsignada() {

@@ -29,7 +29,6 @@ public class CategoryList extends AppCompatActivity implements AdapterView.OnIte
     private static final int LIST_CAT = Menu.FIRST + 3;
 
     private NotesDbAdapter mDbHelper;
-    private Cursor mCategoriesCursor;
     private ListView mList;
 
     /** Called when the activity is first created. */
@@ -62,7 +61,7 @@ public class CategoryList extends AppCompatActivity implements AdapterView.OnIte
      */
     private void fillData() {
         // Get all of the notes from the database and create the item list
-        mCategoriesCursor = mDbHelper.fetchAllCategories(false);
+        Cursor mCategoriesCursor = mDbHelper.fetchAllCategories(false);
 
         if(mCategoriesCursor.getCount() > 0){
             mList.setVisibility(View.VISIBLE);

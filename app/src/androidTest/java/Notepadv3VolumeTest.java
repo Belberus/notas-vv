@@ -3,7 +3,6 @@ import android.util.Log;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import es.unizar.eina.notepadv3.Notepadv3;
 import es.unizar.eina.notepadv3.NotesDbAdapter;
@@ -27,7 +26,6 @@ public class Notepadv3VolumeTest extends ActivityInstrumentationTestCase2<Notepa
 
     }
 
-    @Test
     public void testVolume() {
         int notasCreadas = 0;
         for (int i=1;i<=1050;i++) {

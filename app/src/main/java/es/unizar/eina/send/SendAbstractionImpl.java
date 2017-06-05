@@ -13,10 +13,10 @@ import android.app.Activity;
 public class SendAbstractionImpl implements SendAbstraction {
 
     /** objeto delegado que facilita la implementacion del metodo send */
-    private SendImplementor implementor;
+    private final SendImplementor implementor;
 
     /** Constructor de la clase. Inicializa el objeto delegado
-     * @param sourceActiviy actividad desde la cual se abrira la actividad
+     * @param sourceActivity actividad desde la cual se abrira la actividad
      *                      encargada de enviar la nota
      * @param method parametro potencialmente utilizable para instanciar
      *               el objeto delegado

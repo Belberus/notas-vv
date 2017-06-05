@@ -11,6 +11,15 @@
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/javax.inject-1_6abd9f4e47c7c84fffba77bdc8a98428e94c9234.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e82f834fc6bf45392757c6947f6548685de174a4">
+        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_24863bf017bab621f5be05fe90a4b41ee94f00e1/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/belbus/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"
         jumboMode="false"
@@ -30,15 +39,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-core/2.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="25a72389e79fbac13f78412a4a6ffacc1cdb0673">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-core-2.2.1_e2f7f5fa83a30c94308ab8c70d2409ab7809348a.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/belbus/Universidad/Notepad/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-core/2.2.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -47,13 +47,13 @@
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-core-2.2.1_8f8cd5a995fc8e8666f8a049d5ceb0d94d30bd17.jar" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_af7a7fd854b75920bfd60122cc7c53fb6eeea4e9.jar" />
+        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.1_af7a7fd854b75920bfd60122cc7c53fb6eeea4e9/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -63,24 +63,6 @@
         revision="23.0.1"
         sha1="4785a3c21320980282f9f33d0d1264a69040538f">
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-library-1.3_c16127e6c39dc7aa977041e0c7cb3d9af02f0f7a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/jacoco/jacocoagent.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fdca30f45b60c6ba724c26a9ce127975e26d4bcb">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/debug/jacocoagent_2fc0f9dff0183346cc115a0616ef2dc61d56c033.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support.test/exposed-instrumentation-api-publish/0.4.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e1d90a3498ab7a4b68ea6e936e71cf7f4e95453f">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-exposed-instrumentation-api-publish-0.4.1_4e41320eccab791487ca015af00f7dfe3d786a35.jar" />
     </item>
     <item
         is-multidex="false"
@@ -102,48 +84,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_3de6c2333155b4d87ac35196fa27bcddd34a311d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support.test/runner/0.4.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f607369e68cb756b3f8f523403e3d80433a68aa1">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-runner-0.4.1_00bdbbd8806abbf83e915f05dd737eb10f45eda0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-intents/2.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="41a6f45fc287003d7409ef40a8806e6821c4fe57">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-intents-2.2.1_43b4f64e9f489480b396e61ea9f2fcbdfda2ddb3.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/belbus/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/67ff45d9ae02e583d0f9b3432a5ebbe05c30c966/javawriter-2.1.1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="67ff45d9ae02e583d0f9b3432a5ebbe05c30c966">
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/javawriter-2.1.1_33fe2ca4da689bc42bdcf20ea0fcc2824ff8e129.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.4.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e4805433aedef15e73a7eedf7e3496eb4363a583">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-rules-0.4.1_3e9aed5d04d9f4f9271416978facd076b96e1785.jar" />
     </item>
     <item
         is-multidex="false"
@@ -164,6 +110,15 @@
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-exposed-instrumentation-api-publish-0.5_3bd28151c930fb4bdf6db9836efc2638052cba50.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.0.1_3de6c2333155b4d87ac35196fa27bcddd34a311d/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/belbus/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar"
         jumboMode="false"
@@ -173,22 +128,13 @@
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/javax.annotation-api-1.2_f598d1e0c85a40e5e3f8977fde6e3a5a2c99f7ea.jar" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_ef62aa4be27d5565a02f817380940cd2bfc6370f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_f1f93b2a515388b61c0e4e457b60a38759dcbb50.jar" />
+        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.0.1_ef62aa4be27d5565a02f817380940cd2bfc6370f/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -236,6 +182,15 @@
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-integration-1.3_891d8f0ad57d044054aaab5c924e905e074ca7ba.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/belbus/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.1_f1f93b2a515388b61c0e4e457b60a38759dcbb50/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/belbus/Universidad/Notepad/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars/classes.jar"
         jumboMode="false"
@@ -245,6 +200,15 @@
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-rules-0.5_c26a021be416aa7076d37e51fa480ec9b2c9185e.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6952a2d8749cce447505addd680fba7867b30a22">
+        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fa9285458cdae0544e7510be3e6e0f51e160126c/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/belbus/Universidad/Notepad/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
         jumboMode="false"
@@ -252,15 +216,6 @@
         revision="23.0.1"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
         <dex dex="/home/belbus/Universidad/Notepad/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_634bfc0da4328e23afb0802c24cee6535203e6de.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="83e81537012f1975aa902eedbdb8da5aa515aea5">
-        <dex dex="/home/belbus/GitHub/vyv/notas-vv/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-idling-resource-2.2.1_0be88c545f34c3c0af83994478bf6394d7acc418.jar" />
     </item>
 
 </items>

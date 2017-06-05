@@ -16,10 +16,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.util.Log;
 
 import es.unizar.eina.send.MailImplementor;
-import es.unizar.eina.send.SendAbstractionImpl;
 
 public class Notepadv3 extends AppCompatActivity {
 
@@ -30,10 +28,7 @@ public class Notepadv3 extends AppCompatActivity {
     private static final int VIEW_CAT = Menu.FIRST + 4;
     private static final int LIST_CAT = Menu.FIRST + 5;
     private static final int LIST_NOTE = Menu.FIRST + 6;
-    private static final int TEST_CN = Menu.FIRST + 7;
-    private static final int TEST_V = Menu.FIRST + 8;
-    private static final int TEST_S = Menu.FIRST + 9;
-    private static final int RESET = Menu.FIRST + 10;
+    private static final int RESET = Menu.FIRST + 7;
 
     private NotesDbAdapter mDbHelper;
     private ListView mList;
@@ -57,7 +52,9 @@ public class Notepadv3 extends AppCompatActivity {
             int idCat = bundle.getInt("idcat");
             try {
                 setTitle("Notas de " + mDbHelper.getCat(idCat));
-            }catch (Exception e){}
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             fillDataCat(idCat);
         }else {
             fillData();
@@ -166,9 +163,6 @@ public class Notepadv3 extends AppCompatActivity {
         menu.add(Menu.NONE, VIEW_CAT, Menu.NONE, R.string.menu_listC);
         menu.add(Menu.NONE, LIST_CAT, Menu.NONE, R.string.menu_orderByC);
         menu.add(Menu.NONE, LIST_NOTE, Menu.NONE, R.string.menu_orderByTitle);
-        menu.add(Menu.NONE, TEST_CN, Menu.NONE, R.string.test_cn);
-        menu.add(Menu.NONE, TEST_V, Menu.NONE, R.string.test_v);
-        menu.add(Menu.NONE, TEST_S, Menu.NONE, R.string.test_s);
         menu.add(Menu.NONE, RESET, Menu.NONE, R.string.reset);
         return result;
     }
@@ -190,15 +184,6 @@ public class Notepadv3 extends AppCompatActivity {
             case LIST_NOTE:
                 posNote=0;
                 fillDataOrder(true);
-                return true;
-            case TEST_CN:
-                test_cn();
-                return true;
-            case TEST_V:
-                test_v();
-                return true;
-            case TEST_S:
-                test_s();
                 return true;
             case RESET:
                 reset();
@@ -284,32 +269,6 @@ public class Notepadv3 extends AppCompatActivity {
         Intent intent = new Intent(this, CategoryList.class); // creamos el intent
         startActivity(intent);
         finish();
-    }
-
-    /**
-     * Execute black box testing
-     */
-    private void test_cn(){
-        Test.pruebaCrearNota(mDbHelper);
-        Test.pruebaModificarNota(mDbHelper);
-        Test.pruebaBorrarNota(mDbHelper);
-        fillData();
-    }
-
-    /**
-     * Execute volume testing
-     */
-    private void test_v(){
-        Test.pruebaVolumen(mDbHelper);
-        fillData();
-    }
-
-    /**
-     * Execute overload testing
-     */
-    private void test_s(){
-        Test.pruebaSobrecarga(mDbHelper);
-        fillData();
     }
 
     /**

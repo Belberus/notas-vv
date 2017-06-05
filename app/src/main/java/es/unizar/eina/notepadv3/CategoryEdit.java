@@ -89,7 +89,7 @@ public class CategoryEdit extends AppCompatActivity {
     private void saveState() {
         String title = mTitleText.getText().toString();
 
-        if(title.equals("") || title==null){
+        if(title.equals("")){
             title="Nueva_categoria_"+(mDbHelper.getMaxId(false)+1);
         }
 
