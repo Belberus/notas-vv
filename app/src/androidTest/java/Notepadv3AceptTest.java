@@ -95,7 +95,7 @@ public class Notepadv3AceptTest {
     }
 
     @Test
-    public void eliminarCategoria() {
+    public void testEliminarCategoria() {
         sleep();
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
         sleep();
@@ -187,7 +187,7 @@ public class Notepadv3AceptTest {
     }
 
     @Test
-    public void enviarNota() {
+    public void testEnviarNota() {
         sleep();
         onData(anything()).inAdapterView(withId(R.id.list)).atPosition(0).perform(longClick());
         sleep();
